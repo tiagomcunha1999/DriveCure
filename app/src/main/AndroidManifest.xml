@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Funcionarios"></activity>
+        <activity android:name=".novaEntrega"></activity>
+        <activity android:name=".registarFuncionario" />
+        <activity android:name=".Funcionarios" />
         <activity android:name=".Entregas" />
-        <activity android:name=".NovaEntrega" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,17 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Entregas extends AppCompatActivity {
+public class novaEntrega extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_entregas);
+        setContentView(R.layout.nova_entrega);
     }
 
-    public void registaEntrega (View view){
 
-        Intent intent = new Intent(this, novaEntrega.class);
-        startActivity(intent);
-    }
+
+
 }
