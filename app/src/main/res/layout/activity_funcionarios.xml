@@ -11,24 +11,31 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/funcionarios"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_irRegFuncionario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Adicionar Funcionário"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="81dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="232dp"
-        android:layout_height="300dp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="168dp" />
+        android:layout_width="382dp"
+        android:layout_height="354dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_irRegFuncionario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
