@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DriveCure</string>
+    <string name="nova_entrega">"New Delivery "</string>
+    <string name="entregas">Deliveries</string>
+    <string name="funcionarios">Employes</string>
+</resources>
