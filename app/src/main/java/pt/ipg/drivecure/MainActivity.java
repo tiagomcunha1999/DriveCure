@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void novaEntrega(View view){
 
-        Intent intent = new Intent(this, NovaEntrega.class);
+        Intent intent = new Intent(this, novaEntrega.class);
         startActivity(intent);
     }
 

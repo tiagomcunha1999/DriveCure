@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".novaEntrega"></activity>
-        <activity android:name=".registarFuncionario" />
+        <activity android:name=".novoFuncionario" />
         <activity android:name=".Funcionarios" />
         <activity android:name=".Entregas" />
         <activity android:name=".MainActivity">

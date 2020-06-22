@@ -15,9 +15,9 @@ public class Funcionarios extends AppCompatActivity {
 
     }
 
-    public void registaFuncionario (View view){
+    public void novoFuncionario (View view){
 
-        Intent intent = new Intent(this, registarFuncionario.class);
+        Intent intent = new Intent(this, novoFuncionario.class);
         startActivity(intent);
     }
 

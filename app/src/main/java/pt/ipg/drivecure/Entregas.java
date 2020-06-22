@@ -14,7 +14,7 @@ public class Entregas extends AppCompatActivity {
         setContentView(R.layout.activity_entregas);
     }
 
-    public void registaEntrega (View view){
+    public void novaEntrega (View view){
 
         Intent intent = new Intent(this, novaEntrega.class);
         startActivity(intent);
