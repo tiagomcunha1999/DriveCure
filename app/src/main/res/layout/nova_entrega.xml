@@ -20,6 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputNome">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/numeroCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contacto" />
@@ -60,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextInputMorada">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/descricaoEntrega"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Descrição" />
@@ -79,6 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nomeCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome" />
@@ -98,6 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputContacto">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/moradaCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Morada" />

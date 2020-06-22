@@ -9,6 +9,6 @@ public class novoFuncionario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registar_funcionario);
+        setContentView(R.layout.novo_funcionario);
     }
 }
