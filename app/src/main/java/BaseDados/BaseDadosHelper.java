@@ -6,11 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import pt.ipg.drivecure.Funcionarios;
+
 public class BaseDadosHelper extends SQLiteOpenHelper {
 
     private  Context context;
     public static final String DATABASE_NAME = "DiveCure.db";
     public static final int DATABASE_VERSION = 1;
+    private static final boolean DESENVOLVIMENTO = true;
 
 
 
@@ -21,6 +24,20 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        BdTableFuncionarios tabelaFuncionarios = new BdTableFuncionarios(db);
+        tabelaFuncionarios.cria();
+
+        if (DESENVOLVIMENTO) {
+            seedData(db);
+        }
+
+    }
+
+    public void seedData(SQLiteDatabase db){
+
+        BdTableFuncionarios tabelaFuncionarios = new BdTableFuncionarios(db);
+
 
     }
 
