@@ -55,7 +55,7 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
 
     }
 
-    boolean addFuncionario(String nomeFuncionario, String emailFuncionario, String numeroFuncionario) {
+    public void addFuncionario(String nomeFuncionario, String emailFuncionario, Integer numeroFuncionario) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -68,10 +68,8 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
 
         if (resultado == -1) {
             Toast.makeText(context, "Registo Falhado", Toast.LENGTH_SHORT).show();
-            return false;
         } else {
             Toast.makeText(context, "Registado com sucesso", Toast.LENGTH_SHORT).show();
-            return true;
 
         }
     }
