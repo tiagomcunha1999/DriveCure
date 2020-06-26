@@ -5,13 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button Funcionarios;
+    Button novaEntrega;
+    Button Entregas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Funcionarios = (Button)findViewById(R.id.btnFuncionarios);
+        novaEntrega = (Button)findViewById(R.id.btnEntregas);
+        Entregas = (Button)findViewById(R.id.btnEntregas);
     }
 
     public void novaEntrega(View view){

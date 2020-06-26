@@ -12,8 +12,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class Funcionarios extends AppCompatActivity {
 
 
-    RecyclerView recyclerView;
-    FloatingActionButton floatingActionButtonFun;
+     RecyclerView recyclerView;
+     FloatingActionButton floatingActionButtonFun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
