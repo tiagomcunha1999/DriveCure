@@ -17,12 +17,18 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
     private static final boolean DESENVOLVIMENTO = true;
 
     public static final String NOME_TABELA = "funcionarios";
+    public static final String TABELA_ENTREGAS = "Entregas";
 
     public static final String CAMPO_NOME_FUNCIONARIO = "nome_funcionario";
     public static final String CAMPO_ID_FUNCIONARIO = "id_funcionario";
     public static final String CAMPO_EMAIL_FUNCIONARIO = "email_funcionario";
     public static final String CAMPO_NUMERO_FUNCIONARIO = "numero_funcionario";
 
+    public static final String CAMPO_NOME_CLIENTE = "nome_cliente";
+    public static final String CAMPO_ID_ENTREGA = "id_entrega";
+    public static final String CAMPO_CONTACTO = "contacto_cliente";
+    public static final String CAMPO_MORADA = "morada_cliente";
+    public static final String CAMPO_DESCRICAO = "descricao_entrega";
 
     public BaseDadosHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -31,12 +37,13 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE " + NOME_TABELA + "(" +
-                CAMPO_ID_FUNCIONARIO + "INTERGER PRIMARY KEY AUTOINCREMENT, " +
+        String query = "CREATE TABLE " + NOME_TABELA + "(" +
+                CAMPO_ID_FUNCIONARIO + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 CAMPO_NOME_FUNCIONARIO + " TEXT NOT NULL," +
                 CAMPO_EMAIL_FUNCIONARIO + " TEXT NOT NULL," +
-                CAMPO_NUMERO_FUNCIONARIO + " TEXT NOT NULL" +
-                ")");
+                CAMPO_NUMERO_FUNCIONARIO + " INTEGER NOT NULL" +
+                ");";
+        db.execSQL(query);
     }
 
     /* public void seedData(SQLiteDatabase db){

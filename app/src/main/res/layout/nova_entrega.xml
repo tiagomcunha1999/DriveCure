@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".novaEntrega">
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/funcionarioEntrega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Funcionario"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputDescricao"
+        tools:layout_editor_absoluteX="16dp" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputContacto"
         android:layout_width="409dp"
@@ -27,14 +36,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/adicionarEntrega"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextInputDescricao" />
+        app:layout_constraintTop_toBottomOf="@+id/funcionarioEntrega" />
 
     <TextView
         android:id="@+id/textView2"
