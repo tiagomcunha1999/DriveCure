@@ -18,7 +18,7 @@ import BaseDados.BaseDadosHelper;
 public class Funcionarios extends AppCompatActivity {
 
 
-     RecyclerView recyclerView;
+     RecyclerView recyclerViewFuncionarios;
      FloatingActionButton floatingActionButtonFun;
 
      BaseDadosHelper db;
@@ -29,12 +29,14 @@ public class Funcionarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_funcionarios);
 
-        recyclerView = findViewById(R.id.recyclerViewFuncionarios);
-        floatingActionButtonFun = findViewById(R.id.recyclerViewFuncionarios);
+        recyclerViewFuncionarios = findViewById(R.id.recyclerViewFuncionarios);
+
+
+        floatingActionButtonFun = findViewById(R.id.floatingActionButtonFun);
 
         floatingActionButtonFun.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent intent = new Intent(Funcionarios.this, novoFuncionario.class);
                 startActivity(intent);
             }
@@ -67,8 +69,7 @@ public class Funcionarios extends AppCompatActivity {
 
 
 
-
-        }
+    }
 
 
 }

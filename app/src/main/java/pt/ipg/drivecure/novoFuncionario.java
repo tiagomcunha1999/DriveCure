@@ -25,6 +25,8 @@ public class novoFuncionario extends AppCompatActivity {
         numeroFuncionario = findViewById(R.id.numeroFuncionario);
 
         btn_registoFuncionario = findViewById(R.id.btn_registoFuncionario);
+
+
         btn_registoFuncionario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
