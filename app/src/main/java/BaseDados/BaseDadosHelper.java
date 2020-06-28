@@ -1,4 +1,4 @@
-package BaseDados;
+/*package BaseDados;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -52,14 +52,14 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
 
 
     } */
-
+ /*
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        /*
+
         db.execSQL("DROP TABLE IF EXISTS "+ NOME_TABELA);
         onCreate(db);
-        */
+
 
     }
 
@@ -97,3 +97,5 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
 
     }
 }
+
+*/

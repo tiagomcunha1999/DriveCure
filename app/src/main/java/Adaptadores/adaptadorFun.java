@@ -17,13 +17,13 @@ import pt.ipg.drivecure.R;
 public class adaptadorFun extends RecyclerView.Adapter<adaptadorFun.MyViewHolder> {
 
     private Context context;
-    private ArrayList idFuncionario, nomeFuncionario, emailFuncionario, numeroFuncionario;
+    private ArrayList id_funcionario, nomeFuncionario, emailFuncionario, numeroFuncionario;
 
-    adaptadorFun(Context context, ArrayList idFuncionario, ArrayList nomeFuncionario, ArrayList emailFuncionario,
+    adaptadorFun(Context context, ArrayList id_funcionario, ArrayList nomeFuncionario, ArrayList emailFuncionario,
                   ArrayList numeroFuncionario){
 
         this.context = context;
-        this.idFuncionario = idFuncionario;
+        this.id_funcionario = id_funcionario;
         this.nomeFuncionario = nomeFuncionario;
         this.emailFuncionario = emailFuncionario;
         this.numeroFuncionario = numeroFuncionario;
@@ -40,6 +40,7 @@ public class adaptadorFun extends RecyclerView.Adapter<adaptadorFun.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
 
     }
 
