@@ -7,7 +7,7 @@
     tools:context=".novaEntrega">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/funcionarioEntrega"
+        android:id="@+id/nome_funcionario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -29,22 +29,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputNome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/numeroCliente"
+            android:id="@+id/numero_cliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contacto" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/adicionarEntrega"
+        android:id="@+id/adicionar_entrega"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:text="Adicionar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/funcionarioEntrega" />
+        app:layout_constraintTop_toBottomOf="@+id/nome_funcionario" />
 
     <TextView
         android:id="@+id/textView2"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextInputMorada">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/descricaoEntrega"
+            android:id="@+id/descricao_entrega"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Descrição" />
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nomeCliente"
+            android:id="@+id/nome_cliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome" />
@@ -111,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputContacto">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/moradaCliente"
+            android:id="@+id/morada_cliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Morada" />
