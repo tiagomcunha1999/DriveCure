@@ -29,9 +29,9 @@ public class funcionarioAdpter extends RecyclerView.Adapter <funcionarioAdpter.F
         public FuncionariosViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            nomeFuncionario = itemView.findViewById(R.id.nomeFuncionario);
+            /*nomeFuncionario = itemView.findViewById(R.id.nomeFuncionario);
             emailFuncionario = itemView.findViewById(R.id.emailFuncionario);
-            numeroFuncionario = itemView.findViewById(R.id.numeroFuncionario);
+            numeroFuncionario = itemView.findViewById(R.id.numeroFuncionario);*/
 
 
         }

@@ -74,4 +74,19 @@ public class BaseDadosHelper extends SQLiteOpenHelper {
 
         }
     }
+
+    public Cursor lerFuncionarios(){
+
+        String query ="SELECT * FROM " + NOME_TABELA;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+
+        if(db != null){
+             cursor = db.rawQuery(query, null);
+
+        }
+        return cursor;
+
+    }
 }
