@@ -9,9 +9,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button Funcionarios;
-    Button novaEntrega;
-    Button Entregas;
 
 
     @Override
@@ -19,26 +16,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Funcionarios = (Button)findViewById(R.id.btnFuncionarios);
-        novaEntrega = (Button)findViewById(R.id.btnEntregas);
-        Entregas = (Button)findViewById(R.id.btnEntregas);
     }
 
     public void novaEntrega(View view){
 
-        Intent intent = new Intent(this, novaEntrega.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, novaEntrega.class);
+        startActivity(intent);*/
     }
 
     public void Entregas(View view){
 
-        Intent intent = new Intent(this, Entregas.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, Entregas.class);
+        startActivity(intent);*/
     }
 
     public void Funcionarios(View view){
 
-        Intent intent = new Intent(this, Funcionarios.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, Funcionarios.class);
+        startActivity(intent);*/
     }
 }

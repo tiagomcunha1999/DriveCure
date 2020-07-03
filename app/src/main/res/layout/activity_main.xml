@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d1d1e0"
     tools:context=".MainActivity">
 
     <Button
@@ -51,15 +52,17 @@
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_marginTop="60dp"
+        android:background="@drawable/custom_button"
         android:onClick="Funcionarios"
         android:text="@string/funcionarios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntregas"
-        tools:text="@string/funcionarios"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:background="@drawable/custom_button"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntregas"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/funcionarios" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
