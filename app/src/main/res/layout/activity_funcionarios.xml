@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Funcionarios">
+    tools:context=".Funcionarios"
+    android:background="#d1d1e0">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingButtonFun"

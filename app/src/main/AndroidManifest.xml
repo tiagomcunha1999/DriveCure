@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addFuncionarios"></activity>
-        <activity android:name=".Funcionarios" />
+        <activity android:name=".addFuncionarios"
+            android:label="@string/funcionarios">
+        </activity>
+        <activity android:name=".Funcionarios"
+            android:label="@string/funcionarios"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
