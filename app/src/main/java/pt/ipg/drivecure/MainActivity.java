@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Funcionarios(View view){
 
-        /*Intent intent = new Intent(this, Funcionarios.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, Funcionarios.class);
+        startActivity(intent);
     }
 }
