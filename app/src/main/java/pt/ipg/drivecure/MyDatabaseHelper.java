@@ -15,11 +15,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     /*tabela dos funcionarios - nome e colunas*/
-    public static final String TABLE_NAME = "TabelaFuncionarios";
-    public static final String COLUMN_ID_FUNCIONARIO = "id_funcionario";
-    public static final String COLUMN_NOME_FUNCIONARIO = "nome_funcionario";
-    public static final String COLUMN_EMAIL_FUNCIONARIO = "email_funcionario";
-    public static final String COLUMN_CONTACTO_FUNCIONARIO = "contacto_funcionario";
+    private static final String TABLE_NAME = "TabelaFuncionarios";
+    private static final String COLUMN_ID_FUNCIONARIO = "id_funcionario";
+    private static final String COLUMN_NOME_FUNCIONARIO = "nome_funcionario";
+    private static final String COLUMN_EMAIL_FUNCIONARIO = "email_funcionario";
+    private static final String COLUMN_CONTACTO_FUNCIONARIO = "contacto_funcionario";
 
 
     public MyDatabaseHelper(@Nullable Context context) {
@@ -42,6 +42,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-       onCreate(db);
+        onCreate(db);
     }
 }
