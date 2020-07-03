@@ -10,10 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".addFuncionarios"
-            android:label="@string/funcionarios">
+            android:label="@string/addfuncionarios"
+            android:parentActivityName=".Funcionarios">
         </activity>
         <activity android:name=".Funcionarios"
-            android:label="@string/funcionarios"/>
+            android:label="@string/funcionarios"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

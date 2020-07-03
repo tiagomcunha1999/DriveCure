@@ -3,4 +3,5 @@
     <string name="nova_entrega">Nova Entrega</string>
     <string name="entregas">Entregas</string>
     <string name="funcionarios">Funcionarios</string>
+    <string name="addfuncionarios"> Adicionar Funcionario </string>
 </resources>
