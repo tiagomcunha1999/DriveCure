@@ -15,7 +15,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     /*tabela dos funcionarios - nome e colunas*/
-    public static final String TABLE_NAME = "TabelaFuncionarios"
+    public static final String TABLE_NAME = "TabelaFuncionarios";
     public static final String COLUMN_ID_FUNCIONARIO = "id_funcionario";
     public static final String COLUMN_NOME_FUNCIONARIO = "nome_funcionario";
     public static final String COLUMN_EMAIL_FUNCIONARIO = "email_funcionario";
@@ -41,6 +41,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+       onCreate(db);
     }
 }
