@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nomeFuncionario" />
 
     <EditText
-        android:id="@+id/numeroFuncionario"
+        android:id="@+id/contactoFuncionario"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -56,5 +56,5 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numeroFuncionario" />
+        app:layout_constraintTop_toBottomOf="@+id/contactoFuncionario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

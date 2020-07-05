@@ -1,5 +1,6 @@
 package pt.ipg.drivecure;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -45,7 +46,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addFuncionario(){
-        
+    void addFuncionario(String nomeFuncionario, String emailFuncionario, String contactoFuncionario){
+        SQLiteDatabase db = this.getWritableDatabase(); /* POder escrever dados na tabela*/
+        ContentValues cv = new ContentValues(); /*Passar dados para as tabelas*/
+
+        cv.put(COLUMN_NOME_FUNCIONARIO, nomeFuncionario);
+        cv.put(COLUMN_EMAIL_FUNCIONARIO, emailFuncionario);
+        cv.put(COLUMN_CONTACTO_FUNCIONARIO, contactoFuncionario);
+
+
     }
 }
