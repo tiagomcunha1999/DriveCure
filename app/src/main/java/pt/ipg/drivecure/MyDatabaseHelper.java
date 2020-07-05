@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -46,7 +47,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addFuncionario(String nomeFuncionario, String emailFuncionario, String contactoFuncionario){
+    void addFuncionario(String nomeFuncionario, String emailFuncionario, int contactoFuncionario){
         SQLiteDatabase db = this.getWritableDatabase(); /* POder escrever dados na tabela*/
         ContentValues cv = new ContentValues(); /*Passar dados para as tabelas*/
 
@@ -54,6 +55,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_EMAIL_FUNCIONARIO, emailFuncionario);
         cv.put(COLUMN_CONTACTO_FUNCIONARIO, contactoFuncionario);
 
+        long resultado = db.insert (TABLE_NAME, null, cv);
 
+        if (resultado == -1){
+            Toast.makeText(context, "Funcionario nao foi registado", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Funcionario registado com sucesso", Toast.LENGTH_SHORT).show();
+        }
     }
 }
