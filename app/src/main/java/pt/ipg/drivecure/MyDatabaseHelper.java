@@ -31,23 +31,21 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {  /* CRIAÇAO DA TABELA DOS FUNCIONARIOS  */
-        String query =
-                "CREATE TABLE " + TABLE_NAME +
-                        " (" + COLUMN_ID_FUNCIONARIO + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+        String query = "CREATE TABLE " + TABLE_NAME +
+                        " (" + COLUMN_ID_FUNCIONARIO + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         COLUMN_NOME_FUNCIONARIO + " TEXT, " +
                         COLUMN_EMAIL_FUNCIONARIO + " TEXT, " +
                         COLUMN_CONTACTO_FUNCIONARIO + " INTEGER);";
         db.execSQL(query);
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        onCreate(db);
+        /*db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);*/
     }
 
-    void addFuncionario(String nomeFuncionario, String emailFuncionario, int contactoFuncionario){
+    void addFuncionario(String nomeFuncionario, String emailFuncionario, Integer contactoFuncionario){
         SQLiteDatabase db = this.getWritableDatabase(); /* POder escrever dados na tabela*/
         ContentValues cv = new ContentValues(); /*Passar dados para as tabelas*/
 
@@ -55,7 +53,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_EMAIL_FUNCIONARIO, emailFuncionario);
         cv.put(COLUMN_CONTACTO_FUNCIONARIO, contactoFuncionario);
 
-        long resultado = db.insert (TABLE_NAME, null, cv);
+        long resultado = db.insert(TABLE_NAME, null, cv);
 
         if (resultado == -1){
             Toast.makeText(context, "Funcionario nao foi registado", Toast.LENGTH_SHORT).show();

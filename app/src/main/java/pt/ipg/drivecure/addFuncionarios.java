@@ -21,18 +21,20 @@ public class addFuncionarios extends AppCompatActivity {
         nomeFuncionario = findViewById(R.id.nomeFuncionario);
         emailFuncionario = findViewById(R.id.emailFuncionario);
         contactoFuncionario = findViewById(R.id.contactoFuncionario);
+
         registarFuncionario = findViewById(R.id.registarFuncionario);
+
+        /*metodo para passar informações inseridas pelo utilizador para a funçao addfuncionarios*/
 
         registarFuncionario.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { /*metodo para ir buscar informaçoes inseridas pelo utilizador*/
-            MyDatabaseHelper myDB = new MyDatabaseHelper(addFuncionarios.this);
-            myDB.addFuncionario(nomeFuncionario.getText().toString().trim(),
-                    emailFuncionario.getText().toString().trim(),
-                    Integer.valueOf(contactoFuncionario.getText().toString().trim())
-            );
-            }
+            public void onClick(View view) {
 
+                MyDatabaseHelper myDB = new MyDatabaseHelper(addFuncionarios.this);
+                myDB.addFuncionario(nomeFuncionario.getText().toString().trim(),
+                        emailFuncionario.getText().toString().trim(),
+                        Integer.valueOf(contactoFuncionario.getText().toString().trim()));
+            }
             });
 
     }
