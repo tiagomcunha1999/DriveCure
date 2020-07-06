@@ -25,14 +25,16 @@ public class updateFuncionarios extends AppCompatActivity {
         contacto_funcionario = findViewById(R.id.contactoFuncionarioUpdate);
         update_button = findViewById(R.id.updateFuncionario);
 
+        receberDadosIntent(); //recebe os dados
+
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onClick(View view) {MyDatabaseHelper myDB = new MyDatabaseHelper(updateFuncionarios.this);
+                myDB.updateData(id, nome, email, contacto); //faz os update dos dados
             }
         });
 
-        receberDadosIntent();
+
     }
 
     void receberDadosIntent(){  /*receber e guardar dados dentro das strings*/
