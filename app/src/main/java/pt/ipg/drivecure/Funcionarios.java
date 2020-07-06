@@ -1,6 +1,7 @@
 package pt.ipg.drivecure;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -20,6 +21,8 @@ public class Funcionarios extends AppCompatActivity {
 
     MyDatabaseHelper myDB;
     ArrayList<String> id_funcionario, nome_funcionario, email_funcionario, contacto_funcionario;
+    AdaptadorFuncionarios adaptadorFuncionarios;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,12 @@ public class Funcionarios extends AppCompatActivity {
         contacto_funcionario = new ArrayList<>();
 
         storeFuncionariosArrays();
+
+        adaptadorFuncionarios = new AdaptadorFuncionarios(Funcionarios.this, id_funcionario, nome_funcionario, email_funcionario,
+                contacto_funcionario);
+        recyclerViewFun.setAdapter(adaptadorFuncionarios);
+
+        recyclerViewFun.setLayoutManager(new LinearLayoutManager(Funcionarios.this));
 
     }
 
