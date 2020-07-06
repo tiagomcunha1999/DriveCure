@@ -1,6 +1,7 @@
 package pt.ipg.drivecure;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class AdaptadorFuncionarios extends RecyclerView.Adapter<AdaptadorFuncion
 
     private Context context;
     private ArrayList id_funcionario, nome_funcionario, email_funcionario, contacto_funcionario;
+
 
 
     AdaptadorFuncionarios(Context context, ArrayList id_funcionario, ArrayList nome_funcionario, ArrayList email_funcionario,
@@ -38,13 +40,22 @@ public class AdaptadorFuncionarios extends RecyclerView.Adapter<AdaptadorFuncion
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.id_funcionario_txt.setText(String.valueOf(id_funcionario.get(position)));
         holder.nome_funcionario_txt.setText(String.valueOf(nome_funcionario.get(position)));
         holder.email_funcionario_txt.setText(String.valueOf(email_funcionario.get(position)));
         holder.contacto_funcionario_txt.setText(String.valueOf(contacto_funcionario.get(position)));
-
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { /* para conseguir dar trigger nos items do recycler view*/
+            Intent intent = new Intent(context, updateFuncionarios.class);
+            intent.putExtra("id", String.valueOf(id_funcionario.get(position))); /* informaçoes que vao ser transeferidas para a update activity*/
+            intent.putExtra("nome", String.valueOf(nome_funcionario.get(position)));
+            intent.putExtra("email", String.valueOf(email_funcionario.get(position)));
+            intent.putExtra("contacto", String.valueOf(contacto_funcionario.get(position)));
+            context.startActivity(intent);
+            }
+        });
     }
 
     @Override
