@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,7 @@ public class AdaptadorFuncionarios extends RecyclerView.Adapter<AdaptadorFuncion
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView id_funcionario_txt, nome_funcionario_txt, email_funcionario_txt, contacto_funcionario_txt;
+        LinearLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +64,7 @@ public class AdaptadorFuncionarios extends RecyclerView.Adapter<AdaptadorFuncion
             nome_funcionario_txt = itemView.findViewById(R.id.nome_funcionario_txt);
             email_funcionario_txt = itemView.findViewById(R.id.email_funcionario_txt);
             contacto_funcionario_txt = itemView.findViewById(R.id.contacto_funcionario_txt);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
 
         }
     }
