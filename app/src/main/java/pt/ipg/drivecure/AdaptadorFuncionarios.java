@@ -1,5 +1,6 @@
 package pt.ipg.drivecure;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,14 +17,15 @@ import java.util.ArrayList;
 public class AdaptadorFuncionarios extends RecyclerView.Adapter<AdaptadorFuncionarios.MyViewHolder> {
 
     private Context context;
+    Activity activity;
     private ArrayList id_funcionario, nome_funcionario, email_funcionario, contacto_funcionario;
 
 
 
-    AdaptadorFuncionarios(Context context, ArrayList id_funcionario, ArrayList nome_funcionario, ArrayList email_funcionario,
+    AdaptadorFuncionarios(Activity activity, Context context, ArrayList id_funcionario, ArrayList nome_funcionario, ArrayList email_funcionario,
                   ArrayList contacto_funcionairo){
 
-
+        this.activity = activity;
         this.context = context;
         this.id_funcionario = id_funcionario;
         this.nome_funcionario = nome_funcionario;
@@ -53,7 +55,7 @@ public class AdaptadorFuncionarios extends RecyclerView.Adapter<AdaptadorFuncion
             intent.putExtra("nome", String.valueOf(nome_funcionario.get(position)));
             intent.putExtra("email", String.valueOf(email_funcionario.get(position)));
             intent.putExtra("contacto", String.valueOf(contacto_funcionario.get(position)));
-            context.startActivity(intent);
+            activity.startActivityForResult(intent, 1); // dá refresh à activity
             }
         });
     }

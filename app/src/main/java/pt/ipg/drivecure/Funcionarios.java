@@ -1,5 +1,6 @@
 package pt.ipg.drivecure;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,12 +51,21 @@ public class Funcionarios extends AppCompatActivity {
 
         storeFuncionariosArrays();
 
-        adaptadorFuncionarios = new AdaptadorFuncionarios(Funcionarios.this, id_funcionario, nome_funcionario, email_funcionario,
+        adaptadorFuncionarios = new AdaptadorFuncionarios(Funcionarios.this,this, id_funcionario, nome_funcionario, email_funcionario,
                 contacto_funcionario);
         recyclerViewFun.setAdapter(adaptadorFuncionarios);
 
         recyclerViewFun.setLayoutManager(new LinearLayoutManager(Funcionarios.this));
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1){ // se o codigo da actividade for 1 como anteriormente referido ela é recriada logo faz refresh
+            recreate();
+        }
     }
 
     void storeFuncionariosArrays(){
