@@ -32,16 +32,23 @@ public class updateFuncionarios extends AppCompatActivity {
             }
         });
 
+        receberDadosIntent();
     }
 
     void receberDadosIntent(){  /*receber e guardar dados dentro das strings*/
         if (getIntent().hasExtra("id") && getIntent().hasExtra("nome")
                 && getIntent().hasExtra("email") && getIntent().hasExtra("contacto") ){
-
+            //receber dados
             id = getIntent().getStringExtra("id");
             nome = getIntent().getStringExtra("nome");
             email = getIntent().getStringExtra("email");
             contacto = getIntent().getStringExtra("contacto");
+
+            //gerir dados
+            nome_funcionario.setText(nome);
+            email_funcionario.setText(email);
+            contacto_funcionario.setText(contacto);
+
 
         }else{
             Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
