@@ -45,9 +45,11 @@ public class Funcionarios extends AppCompatActivity {
         email_funcionario = new ArrayList<>();
         contacto_funcionario = new ArrayList<>();
 
+        storeFuncionariosArrays();
+
     }
 
-    void displayFuncionarios(){
+    void storeFuncionariosArrays(){
         Cursor cursor = myDB.lerFuncionarios();
 
         if(cursor.getCount() == 0){
