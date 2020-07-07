@@ -58,7 +58,7 @@ public class updateFuncionarios extends AppCompatActivity {
             email_funcionario.setText(email);
             contacto_funcionario.setText(contacto);
 
-            //Criaçao da action bar para eleminar funcionarios
+            //Action bar para ver nome de pessoa que se quer editar
             ActionBar ab = getSupportActionBar();
             if (ab != null) {
                 ab.setTitle(nome);
