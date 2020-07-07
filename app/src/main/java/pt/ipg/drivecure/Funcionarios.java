@@ -1,5 +1,6 @@
 package pt.ipg.drivecure;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -91,5 +93,17 @@ public class Funcionarios extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.my_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+       if(item.getItemId() == R.id.delete_all){
+           Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
+           MyDatabaseHelper myDB = new MyDatabaseHelper(this);
+           myDB.deleteAllData();
+            recreate(); //dar refresh 
+       }
+
+        return super.onOptionsItemSelected(item);
     }
 }
