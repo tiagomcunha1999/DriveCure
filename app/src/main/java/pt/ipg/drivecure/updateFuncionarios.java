@@ -29,7 +29,13 @@ public class updateFuncionarios extends AppCompatActivity {
 
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {MyDatabaseHelper myDB = new MyDatabaseHelper(updateFuncionarios.this);
+            public void onClick(View view) {
+
+                MyDatabaseHelper myDB = new MyDatabaseHelper(updateFuncionarios.this);
+
+                nome = nome_funcionario.getText().toString().trim();
+                email = email_funcionario.getText().toString().trim();
+                contacto = contacto_funcionario.getText().toString().trim();
                 myDB.updateData(id, nome, email, contacto); //faz os update dos dados
             }
         });
