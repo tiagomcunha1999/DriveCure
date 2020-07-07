@@ -83,13 +83,14 @@ public class updateFuncionarios extends AppCompatActivity {
 
     void confirmDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete" + nome + "?");
-        builder.setMessage("Are you sure you want to delete" + nome + "?");
+        builder.setTitle("Delete " + nome + "?");
+        builder.setMessage("Are you sure you want to delete " + nome + "?");
         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 MyDatabaseHelper myDB = new MyDatabaseHelper(updateFuncionarios.this);
                 myDB.deleteOneRow(id); // chama o metodo para eliminar a row
+                finish();
             }
         });
 
@@ -99,6 +100,7 @@ public class updateFuncionarios extends AppCompatActivity {
 
             }
         });
+        builder.create().show();
     }
 
 }
