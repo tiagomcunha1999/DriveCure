@@ -1,5 +1,6 @@
 package pt.ipg.drivecure;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -56,6 +57,12 @@ public class updateFuncionarios extends AppCompatActivity {
             nome_funcionario.setText(nome);
             email_funcionario.setText(email);
             contacto_funcionario.setText(contacto);
+
+            //Criaçao da action bar para eleminar funcionarios
+            ActionBar ab = getSupportActionBar();
+            if (ab != null) {
+                ab.setTitle(nome);
+            }
 
 
         }else{
