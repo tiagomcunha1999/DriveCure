@@ -1,8 +1,10 @@
 package pt.ipg.drivecure;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +14,7 @@ import android.widget.Toast;
 public class updateFuncionarios extends AppCompatActivity {
 
     EditText nome_funcionario, email_funcionario, contacto_funcionario;
-    Button update_button;
+    Button update_button, delete_button;
 
     String id, nome, email, contacto;
 
@@ -25,6 +27,7 @@ public class updateFuncionarios extends AppCompatActivity {
         email_funcionario = findViewById(R.id.emailFuncionarioUpdate);
         contacto_funcionario = findViewById(R.id.contactoFuncionarioUpdate);
         update_button = findViewById(R.id.updateFuncionario);
+        delete_button = findViewById(R.id.eliminarFuncionario);
 
         receberDadosIntent(); //recebe os dados
 
@@ -38,6 +41,13 @@ public class updateFuncionarios extends AppCompatActivity {
                 email = email_funcionario.getText().toString().trim();
                 contacto = contacto_funcionario.getText().toString().trim();
                 myDB.updateData(id, nome, email, contacto); //faz os update dos dados
+            }
+        });
+
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            confirmDialog();//chama metodo que confirma se quer ou nao apagar os dados
             }
         });
 
@@ -70,5 +80,25 @@ public class updateFuncionarios extends AppCompatActivity {
         }
     }
 
+
+    void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete" + nome + "?");
+        builder.setMessage("Are you sure you want to delete" + nome + "?");
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MyDatabaseHelper myDB = new MyDatabaseHelper(updateFuncionarios.this);
+                myDB.deleteOneRow(id); // chama o metodo para eliminar a row
+            }
+        });
+
+        builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+    }
 
 }
