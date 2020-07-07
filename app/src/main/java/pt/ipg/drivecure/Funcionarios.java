@@ -2,10 +2,12 @@ package pt.ipg.drivecure;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -13,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -23,6 +28,9 @@ public class Funcionarios extends AppCompatActivity {
 
     RecyclerView recyclerViewFun;
     FloatingActionButton floatingButtonFun;
+    ImageView empty_data;
+    TextView no_data;
+
 
     MyDatabaseHelper myDB;
     ArrayList<String> id_funcionario, nome_funcionario, email_funcionario, contacto_funcionario;
@@ -37,6 +45,8 @@ public class Funcionarios extends AppCompatActivity {
         /* Ler recycler view e botão */
         recyclerViewFun = findViewById(R.id.recyclerViewFun);
         floatingButtonFun = findViewById(R.id.floatingButtonFun);
+        empty_data = findViewById(R.id.empty_data);
+        no_data = findViewById(R.id.no_data);
 
         floatingButtonFun.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +86,9 @@ public class Funcionarios extends AppCompatActivity {
         Cursor cursor = myDB.lerFuncionarios();
 
         if(cursor.getCount() == 0){
-            Toast.makeText(this,"Não existem dados", Toast.LENGTH_SHORT).show();
+            empty_data.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
+
         }else{
             while (cursor.moveToNext()){
                 id_funcionario.add(cursor.getString(0));
@@ -84,7 +96,8 @@ public class Funcionarios extends AppCompatActivity {
                 email_funcionario.add(cursor.getString(2));
                 contacto_funcionario.add(cursor.getString(3));
             }
-
+            empty_data.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
         }
     }
 
@@ -98,16 +111,36 @@ public class Funcionarios extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
        if(item.getItemId() == R.id.delete_all){
-           Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
-           MyDatabaseHelper myDB = new MyDatabaseHelper(this);
-           myDB.deleteAllData();
-
-           //codigo para dar refresh 
-           Intent intent = new Intent(this, Funcionarios.class);
-            startActivity(intent);
-            finish();
+           confirmDialog();
        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All?");
+        builder.setMessage("Are you sure you want to delete all data?");
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MyDatabaseHelper myDB = new MyDatabaseHelper(Funcionarios.this);
+
+                myDB.deleteAllData();
+
+                //codigo para dar refresh
+                Intent intent = new Intent(Funcionarios.this, Funcionarios.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
     }
 }

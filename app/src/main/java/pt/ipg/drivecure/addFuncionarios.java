@@ -2,6 +2,7 @@ package pt.ipg.drivecure;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,11 @@ public class addFuncionarios extends AppCompatActivity {
                 myDB.addFuncionario(nomeFuncionario.getText().toString().trim(),
                         emailFuncionario.getText().toString().trim(),
                         Integer.valueOf(contactoFuncionario.getText().toString().trim()));
+
+                //codigo para dar refresh
+                Intent intent = new Intent(addFuncionarios.this, Funcionarios.class);
+                startActivity(intent);
+                finish();
             }
             });
 
