@@ -101,7 +101,11 @@ public class Funcionarios extends AppCompatActivity {
            Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
            MyDatabaseHelper myDB = new MyDatabaseHelper(this);
            myDB.deleteAllData();
-            recreate(); //dar refresh 
+
+           //codigo para dar refresh 
+           Intent intent = new Intent(this, Funcionarios.class);
+            startActivity(intent);
+            finish();
        }
 
         return super.onOptionsItemSelected(item);
