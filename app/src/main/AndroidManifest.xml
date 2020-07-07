@@ -9,8 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".updateFuncionarios"
-            android:parentActivityName=".Funcionarios"></activity>
+        <activity android:name=".updateClientes"></activity>
+        <activity
+            android:name=".novaEntrega"
+            android:label="@string/nova_entrega"
+            android:parentActivityName=".Entregas" />
+        <activity
+            android:name=".Entregas"
+            android:label="@string/entregas"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".updateFuncionarios"
+            android:parentActivityName=".Funcionarios" />
         <activity
             android:name=".addFuncionarios"
             android:label="@string/addfuncionarios"

@@ -8,4 +8,7 @@
     <string name="updatefuncionario"> Update </string>
     <string name="deletefuncionario"> Delete </string>
     <string name="adicionarfuncionario"> Add </string>
+    <string name="Nome">Name</string>
+    <string name="Descrição">Product discription </string>
+    <string name="Contacto">Phone Number</string>
 </resources>

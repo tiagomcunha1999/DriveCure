@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void novaEntrega(View view){
 
-        /*Intent intent = new Intent(this, novaEntrega.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, novaEntrega.class);
+        startActivity(intent);
     }
 
     public void Entregas(View view){
 
-        /*Intent intent = new Intent(this, Entregas.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, Entregas.class);
+        startActivity(intent);
     }
 
     public void Funcionarios(View view){
