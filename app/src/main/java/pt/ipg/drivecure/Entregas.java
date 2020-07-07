@@ -43,7 +43,6 @@ public class Entregas extends AppCompatActivity {
         recyclerViewEntregas = findViewById(R.id.recyclerViewEntregas);
         floatingButtonEntregas = findViewById(R.id.floatingButtonEntregas);
         empty_data = findViewById(R.id.empty_data_ent);
-        no_data = findViewById(R.id.no_data_ent);
 
         floatingButtonEntregas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +82,6 @@ public class Entregas extends AppCompatActivity {
 
         if(cursor.getCount() == 0){
             empty_data.setVisibility(View.VISIBLE);
-            no_data.setVisibility(View.VISIBLE);
 
         }else{
             while (cursor.moveToNext()){
@@ -93,7 +91,7 @@ public class Entregas extends AppCompatActivity {
                 contacto_cliente.add(cursor.getString(3));
             }
             empty_data.setVisibility(View.GONE);
-            no_data.setVisibility(View.GONE);
+
         }
     }
 
@@ -122,7 +120,7 @@ public class Entregas extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 MyDatabaseHelper myDB = new MyDatabaseHelper(Entregas.this);
 
-                myDB.deleteAllData();
+                myDB.deleteAllData2();
 
                 //codigo para dar refresh
                 Intent intent = new Intent(Entregas.this, Entregas.class);

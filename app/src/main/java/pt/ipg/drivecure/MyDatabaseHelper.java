@@ -123,7 +123,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     void deleteAllData(){ //eleminar todos os dados
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
-        db.execSQL("DELETE FROM " + TABLE_NAME2);
     }
 
     public void novaEntrega(String nomeCliente, String emailCliente, Integer contactoCliente, String descricaoProduto) {
@@ -158,7 +157,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    void updateData2(String row_id, String nome, String email, String contacto){
+    void updateData2(String row_id2, String nome, String email, String contacto){
         SQLiteDatabase db = this.getWritableDatabase(); //para poder escrever na base de dados
         ContentValues cv = new ContentValues();
 
@@ -166,7 +165,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_EMAIL_CLIENTE, email);
         cv.put(COLUMN_CONTACTO_CLIENTE, contacto);
 
-        long result = db.update(TABLE_NAME2, cv, "id_cliente=?", new String[]{row_id});
+        long result = db.update(TABLE_NAME2, cv, "id_cliente=?", new String[]{row_id2});
 
         if(result == -1){
             Toast.makeText(context, "Failed update!", Toast.LENGTH_SHORT).show();
@@ -175,9 +174,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void deleteOneRow2(String row_id){
+    void deleteOneRow2(String row_id2){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(TABLE_NAME2, "id_cliente=?", new String[]{row_id}); //Eliminar string pelo id
+        long result = db.delete(TABLE_NAME2, "id_cliente=?", new String[]{row_id2}); //Eliminar string pelo id
 
         if(result == -1){
             Toast.makeText(context, "FAILED!", Toast.LENGTH_SHORT).show();
@@ -185,4 +184,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Successfully deleted!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    void deleteAllData2(){ //eleminar todos os dados
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME2);
+    }
+
 }

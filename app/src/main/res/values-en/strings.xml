@@ -11,4 +11,5 @@
     <string name="Nome">Name</string>
     <string name="Descrição">Product discription </string>
     <string name="Contacto">Phone Number</string>
+    <string name="Clientes">Clients</string>
 </resources>
