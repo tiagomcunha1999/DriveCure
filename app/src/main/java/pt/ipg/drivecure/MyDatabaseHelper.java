@@ -57,9 +57,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         long resultado = db.insert(TABLE_NAME, null, cv);
 
         if (resultado == -1){
-            Toast.makeText(context, "Funcionario nao foi registado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Failed to insert!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "Funcionario registado com sucesso", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Successfully inserted!", Toast.LENGTH_SHORT).show();
         }
     }
 

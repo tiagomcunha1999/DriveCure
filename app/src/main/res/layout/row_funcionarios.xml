@@ -32,7 +32,7 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:text="Nome 1"
+                android:text="Name 1"
                 android:textColor="#000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/id_funcionario_txt"

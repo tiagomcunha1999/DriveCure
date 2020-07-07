@@ -4,5 +4,8 @@
     <string name="nova_entrega">"New Delivery "</string>
     <string name="entregas">Deliveries</string>
     <string name="funcionarios">Employes</string>
-    <string name="addfuncionarios">New Employe </string>
+    <string name="addfuncionarios"> New Employe </string>
+    <string name="updatefuncionario"> Update </string>
+    <string name="deletefuncionario"> Delete </string>
+    <string name="adicionarfuncionario"> Add </string>
 </resources>

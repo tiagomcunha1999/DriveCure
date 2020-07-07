@@ -41,6 +41,7 @@ public class updateFuncionarios extends AppCompatActivity {
                 email = email_funcionario.getText().toString().trim();
                 contacto = contacto_funcionario.getText().toString().trim();
                 myDB.updateData(id, nome, email, contacto); //faz os update dos dados
+                finish();
             }
         });
 
